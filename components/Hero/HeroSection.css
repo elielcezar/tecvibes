@@ -1,0 +1,179 @@
+.hero-section {
+  padding: 0;
+  background-color: #111;  
+}
+
+.hero-category-title {
+  padding: 60px 0 50px 0;
+  background: #111 url('/bg-hero.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+
+.hero-category-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.hero-category-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 600px;
+  /* Fixed height for the hero section */
+  gap: 0;
+  /* No gap between cards as per reference */
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-card:last-child {
+  border-right: none;
+}
+
+.hero-card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-card__image img,
+.hero-card__image > span {
+  width: 100% !important;
+  height: 100% !important;
+  transition: transform 0.6s ease;
+}
+
+.hero-card:hover .hero-card__image img,
+.hero-card:hover .hero-card__image > span {
+  transform: scale(1.05);
+}
+
+.hero-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.5) 40%,
+      rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+.hero-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.category-tag--purple {
+  background-color: #9c27b0;
+}
+
+.category-tag--pink {
+  background-color: #e91e63;
+}
+
+.category-tag--blue {
+  background-color: #2196f3;
+}
+
+.category-tag--red {
+  background-color: #f44336;
+}
+
+.category-tag--green {
+  background-color: #00D9A5;
+}
+
+.hero-card__title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  transition: color 0.3s ease;
+}
+
+.hero-card:hover .hero-card__title {
+  color: #ffffff;
+  /* Keep white on hover, maybe underline or opacity change? */
+}
+
+.hero-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-card__author {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    grid-auto-rows: 400px;
+  }
+
+  .hero-card {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+  }
+
+  .hero-card {
+    border-right: none;
+  }
+
+  .hero-card__title {
+    font-size: 22px;
+  }
+
+  .hero-card__content {
+    padding: 25px;
+  }
+}
