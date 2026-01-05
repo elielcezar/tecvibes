@@ -10,8 +10,8 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # Diretório do projeto (ajustar se necessário)
-PROJECT_DIR="/home/weloverave/htdocs/weloverave.club"
-PM2_APP_NAME="nextjs-app"
+PROJECT_DIR="/home/tecvibes/htdocs/tecvibes.com.br"
+PM2_APP_NAME="tecvibes"
 
 echo -e "${YELLOW}🚀 Iniciando deploy...${NC}"
 

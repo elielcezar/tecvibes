@@ -1,13 +1,13 @@
 module.exports = {
     apps: [{
-      name: 'nextjs-app',
+      name: 'tecvibes',
       script: '.next/standalone/server.js',
       cwd: process.cwd(), // Garante que roda da raiz do projeto
       instances: 1,
       exec_mode: 'fork',
       env: {
         NODE_ENV: 'production',
-        PORT: process.env.PORT || 3000,
+        PORT: process.env.PORT || 3006,
         // Garantir que o Next.js encontre os arquivos estáticos
         NEXT_STATIC_FOLDER: '.next/static'
       },
