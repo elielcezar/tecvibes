@@ -185,23 +185,6 @@ export default async function PostPage({ params }) {
               </div>
             )}
 
-            {/* Author Bio */}
-            <div className="author-bio">
-              <Image
-                src="/icon.webp"
-                alt="TecVibes"
-                width={80}
-                height={80}
-                className="author-bio__image"
-                style={{ objectFit: 'cover', borderRadius: '50%' }}
-              />
-              <div className="author-bio__content">
-                <p className="author-bio__description">
-                  Gosta do nosso conteúdo? Então faça parte da comunidade entrando para o nosso grupo do <strong>Telegram</strong> e receba nossas notícias antes de todo mundo!
-                </p>
-              </div>
-            </div>
-
           </article>
 
           {/* Sidebar */}

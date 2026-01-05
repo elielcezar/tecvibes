@@ -3,6 +3,7 @@ import Script from 'next/script'
 import TopBar from '@/components/TopBar/TopBar'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
+import Newsletter from '@/components/Newsletter/Newsletter'
 import { fetchCategorias } from '@/services/api'
 import './globals.css'
 
@@ -60,6 +61,7 @@ export default async function RootLayout({ children }) {
         <TopBar />
         <Header categorias={categorias} />
         {children}
+        <Newsletter />
         <Footer />
 
       </body>

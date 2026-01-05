@@ -24,39 +24,6 @@
   padding: 0 0 20px 0;
 }
 
-.footer-middle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  border-top: 1px solid var(--primary-color);
-  padding-top: 30px;
-}
-
-
-
-.footer-widget-title {
-  font-size: 16px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #ffffff;
-  margin: 0 0 25px 0;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer-widget-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background-color: var(--primary-color);
-}
-
 .footer-logo {
   margin-bottom: 20px;
 }
@@ -135,7 +102,7 @@
   color: rgba(255, 255, 255, 0.7);
   transition: all 0.3s ease;
   display: inline-block;
-  position: relative;  
+  position: relative;
 }
 
 .footer-links a::before {
@@ -220,18 +187,6 @@
 }
 
 
-/* Beehiiv Newsletter Embed */
-.widget-newsletter {
-  background: linear-gradient(135deg, #2c2c2c 0%, #0a0a0a 100%);
-  color: #ffffff;
-}
-
-.beehiiv-embed {
-  width: 100%;
-  max-width: 315px !important;
-  border: none;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .footer-grid {
@@ -260,4 +215,3 @@
     justify-content: center;
   }
 }
-
