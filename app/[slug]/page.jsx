@@ -14,13 +14,36 @@ export async function generateMetadata({ params }) {
 
   if (!post) {
     return {
-      title: 'Post not found | TecVibes'
+      title: 'Post não encontrado',
     }
   }
 
   return {
-    title: `${post.title} | TecVibes`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/${post.slug}`,
+      siteName: 'TecVibes',
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: 'pt_BR',
+      type: 'article',
+      publishedTime: post.date, // Supondo que a API retorna uma data ISO 8601
+      authors: [post.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    },
   }
 }
 
@@ -36,7 +59,7 @@ export default async function PostPage({ params }) {
   const relatedPosts = await fetchRelatedPosts(post.id)
 
   // Build full URL for sharing
-  const baseUrl = 'https://TecVibes.club'
+  const baseUrl = 'https://tecvibes.com.br'
   const postUrl = `${baseUrl}/${slug}`
   const shareTitle = encodeURIComponent(post.title)
   const shareUrl = encodeURIComponent(postUrl)
@@ -95,7 +118,7 @@ export default async function PostPage({ params }) {
 
             {/* Social Share */}
             <div className="post-share">
-              <strong>Share:</strong>
+              <strong>Compartilhe:</strong>
               <div className="share-buttons">
                 <a
                   href={shareLinks.facebook}

@@ -8,10 +8,7 @@ import PostsList from '@/components/PostsList/PostsList'
 import { fetchPosts, fetchCategorias } from '@/services/api'
 import '@/app/posts/posts.css'
 
-export const metadata = {
-  title: 'TecVibes',
-  description: 'Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.',
-}
+
 
 export default async function HomePage({ searchParams }) {
   const resolvedSearchParams = await searchParams

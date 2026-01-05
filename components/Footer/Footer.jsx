@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="footer-top-left">
               <div className="footer-logo">
                 <a href="/" className="logo-section">
-                  <Image src="/logo-tecvibes.webp" alt="We Love Rave" width={350} height={45} />
+                  <Image src="/logo-tecvibes2.webp" alt="We Love Rave" width={300} height={39} />
                 </a>
               </div>
               <p className="footer-text">

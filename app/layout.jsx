@@ -9,8 +9,33 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'TecVibes',
+  metadataBase: new URL('https://tecvibes.com.br'),
+  title: {
+    default: 'TecVibes',
+    template: '%s | TecVibes',
+  },
   description: 'Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.',
+  openGraph: {
+    title: 'TecVibes',
+    description: 'Notícias de tecnologia, internet, celulares, computadores e IA.',
+    url: 'https://tecvibes.com.br',
+    siteName: 'TecVibes',
+    images: [
+      {
+        url: '/logo-tecvibes.webp',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TecVibes',
+    description: 'Notícias de tecnologia, internet, celulares, computadores e IA.',
+    images: ['/logo-tecvibes.webp'],
+  },
 }
 
 export default async function RootLayout({ children }) {
@@ -18,17 +43,10 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="pt-BR">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7864415239368120"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={inter.className}>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-816RLJY366"
+          src="https://www.googletagmanager.com/gtag/js?id=G-VNF85SXR88"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -36,19 +54,9 @@ export default async function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-816RLJY366');
+            gtag('config', G-VNF85SXR88');
           `}
         </Script>
-        {/* Metricool Tracker */}
-        <Script id="metricool-tracker" strategy="afterInteractive">
-          {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"a5add28b156761666fc4a4d68ebe5456"})});`}
-        </Script>
-        {/* Beehiiv Newsletter */}
-        <Script
-          src="https://subscribe-forms.beehiiv.com/embed.js"
-          strategy="afterInteractive"
-        />
-
         <TopBar />
         <Header categorias={categorias} />
         {children}
