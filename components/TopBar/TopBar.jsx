@@ -14,13 +14,13 @@ const TopBar = () => {
           <div className="topbar-left">
 
             <div className="social-icons social-icons--desktop">
-              <a href="https://www.facebook.com/weloverave.club/" target="_blank" className="social-link" aria-label="Facebook">
+              <a href="#" target="_blank" className="social-link" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="https://x.com/WeLoveRaveClub" target="_blank" className="social-link" aria-label="Twitter">
+              <a href="#" target="_blank" className="social-link" aria-label="Twitter">
                 <FaXTwitter />
               </a>
-              <a href="https://www.instagram.com/weloverave.club/" target="_blank" className="social-link" aria-label="Instagram">
+              <a href="#" target="_blank" className="social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
             </div>

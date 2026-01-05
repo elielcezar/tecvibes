@@ -9,8 +9,8 @@ import { fetchPosts, fetchCategorias } from '@/services/api'
 import '@/app/posts/posts.css'
 
 export const metadata = {
-  title: 'WeLoveRave - Electronic Music News',
-  description: 'Your definitive source for electronic music news, festivals, reviews and releases',
+  title: 'TecVibes',
+  description: 'Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.',
 }
 
 export default async function HomePage({ searchParams }) {
@@ -31,11 +31,11 @@ export default async function HomePage({ searchParams }) {
   const generateCategorySlug = (name) => {
     if (!name) return ''
     return name
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .trim()
-        .replace(/\s+/g, '-')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
   }
 
   const filteredPosts = categoriaSlug

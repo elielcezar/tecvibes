@@ -9,8 +9,8 @@ import '@/app/posts/posts.css'
 import './search.css'
 
 export const metadata = {
-  title: 'Search | WeLoveRave',
-  description: 'Search results for electronic music news',
+  title: 'TecVibes',
+  description: 'Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.',
 }
 
 export default async function SearchPage({ searchParams }) {
@@ -24,7 +24,7 @@ export default async function SearchPage({ searchParams }) {
     <main className="posts-page search-page">
       {/* Search Header */}
       <div className="search-page-hero">
-        <div className="container-wide">         
+        <div className="container-wide">
           <h1 className="search-page-title">
             {query ? 'Results for' : 'Search'}
 
@@ -32,7 +32,7 @@ export default async function SearchPage({ searchParams }) {
               <strong className="search-page-query"> "{query}"</strong>
             )}
           </h1>
-          
+
           <p className="search-page-count">
             {filteredPosts.length} {filteredPosts.length === 1 ? 'result found' : 'results found'}
           </p>

@@ -206,7 +206,7 @@ pm2 logs nextjs-app --lines 20
 
 ```nginx
 # Template de Vhost para Next.js no CloudPanel
-# Copie e cole no CloudPanel: Sites → weloverave.club → Vhost
+# Copie e cole no CloudPanel: Sites → tecvibes.com.br → Vhost
 # 
 # IMPORTANTE: Este projeto é um frontend puro que consome APIs externas
 # (cms.ecwd.cloud). Não há backend local, então todas as requisições 
@@ -225,7 +225,7 @@ server {
   {{ssl_certificate_key}}
   {{ssl_certificate}}
 
-  server_name weloverave.club;
+  server_name tecvibes.com.br;
 
   {{nginx_access_log}}
   {{nginx_error_log}}

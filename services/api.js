@@ -26,11 +26,11 @@ export const fetchCategorias = async () => {
             // But we might want access to the original category object structure if available,
             // or we reconstruct it here based on the mapped post.
             // Let's rely on the fact that mapPost extracts the primary category name.
-            
+
             if (post.category && post.category !== 'General') {
-                 // Create a slug for the category
+                // Create a slug for the category
                 const slug = normalizeText(post.category).replace(/\s+/g, '-');
-                
+
                 if (!categoriasMap.has(slug)) {
                     categoriasMap.set(slug, {
                         id: slug, // Use slug as ID since we don't have a separate ID
@@ -67,12 +67,12 @@ export const fetchPostBySlug = async (slug) => {
     try {
         const normalizedSlug = slug.trim().toLowerCase();
         const posts = await fetchPosts();
-        
+
         const post = posts.find(p => {
-             // Compare with the mapped slug (which comes from urlAmigavel)
-             return p.slug.toLowerCase() === normalizedSlug;
+            // Compare with the mapped slug (which comes from urlAmigavel)
+            return p.slug.toLowerCase() === normalizedSlug;
         });
-        
+
         return post || null;
     } catch (error) {
         console.error('Error fetching post by slug:', error);
@@ -141,7 +141,7 @@ const mapPost = (apiPost) => {
     // Map category - categorias is an array in the new API too
     let category = 'General';
     let categoryColor = 'blue';
-    
+
     if (apiPost.categorias && apiPost.categorias.length > 0) {
         // Assuming apiPost.categorias[0] has a 'nome' property based on typical structure,
         // or it might be just a string? The previous code assumed object with 'nome'.
@@ -167,7 +167,7 @@ const mapPost = (apiPost) => {
     }
 
     // Map tags
-    const tags = apiPost.tags && apiPost.tags.length > 0 
+    const tags = apiPost.tags && apiPost.tags.length > 0
         ? apiPost.tags.map(tag => typeof tag === 'string' ? tag : (tag.nome || tag))
         : [];
 
@@ -175,10 +175,10 @@ const mapPost = (apiPost) => {
     let date = 'Date not available';
     if (apiPost.dataPublicacao) {
         const dateObj = new Date(apiPost.dataPublicacao);
-        const formatted = dateObj.toLocaleDateString('pt-BR', { 
-            day: 'numeric', 
-            month: 'short', 
-            year: 'numeric' 
+        const formatted = dateObj.toLocaleDateString('pt-BR', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
         });
         // Capitalize first letter
         date = formatted.charAt(0).toUpperCase() + formatted.slice(1);
@@ -196,7 +196,7 @@ const mapPost = (apiPost) => {
         image: image,
         category: category,
         categoryColor: categoryColor,
-        author: 'WeLoveRave Team',
+        author: 'Editoria TecVibes',
         authorImage: 'https://i.pravatar.cc/150?img=12',
         date: date,
         slug: apiPost.urlAmigavel || '',

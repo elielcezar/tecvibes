@@ -22,14 +22,14 @@
   overflow: hidden;
 }
 
-.post-card__image{
+.post-card__image {
   width: 100% !important;
   height: 100% !important;
   transition: transform 0.4s ease;
 }
 
 .post-card:hover .post-card__image,
-.post-card:hover .post-card__image-wrapper > span {
+.post-card:hover .post-card__image-wrapper>span {
   transform: scale(1.08);
 }
 
@@ -85,7 +85,7 @@
 
 .post-card__meta-item svg {
   font-size: 14px;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .post-card__excerpt {
@@ -120,4 +120,3 @@
     font-size: 14px;
   }
 }
-

@@ -9,8 +9,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'WeLoveRave - Electronic Music News',
-  description: 'Your definitive source for electronic music news, festivals, reviews and releases',
+  title: 'TecVibes',
+  description: 'Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.',
 }
 
 export default async function RootLayout({ children }) {
