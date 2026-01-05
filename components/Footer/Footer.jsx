@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import { FaFacebookF, FaXTwitter, FaInstagram, FaTiktok } from 'react-icons/fa6'
 import './Footer.css'
 
@@ -21,38 +22,20 @@ const Footer = () => {
                 </a>
               </div>
               <p className="footer-text">
-                Sua fonte definitiva para notícias sobre música eletrônica. Cobertura completa de festivais, lançamentos, entrevistas exclusivas com DJs e produtores.
+                Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.
               </p>
               <p className="footer-text">
-                <strong>Email:</strong> contact@weloverave.club
+                <strong>Email:</strong> contato@tecvibes.com.br
               </p>
             </div>
 
           </div>
 
           <div className="footer-middle">
-            {/* Newsletter Widget - Beehiiv */}
+            {/* Newsletter Widget */}
             <div className="footer-widget">
               <div className="widget widget-newsletter">
-                <p className="widget-text">
-                  Inscreva-se na nossa newsletter para receber as últimas notícias.
-                </p>
-                <iframe
-                  src="https://subscribe-forms.beehiiv.com/53b63e20-6c57-4b77-8bcb-a6f596870bd8"
-                  className="beehiiv-embed"
-                  data-test-id="beehiiv-embed"
-                  frameBorder="0"
-                  scrolling="no"
-                  style={{
-                    width: '100%',
-                    maxWidth: '100%',
-                    height: '60px',
-                    margin: 0,
-                    borderRadius: '0px',
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none'
-                  }}
-                />
+                <Script async data-uid="554d9d7e3f" src="https://tecvibes.kit.com/554d9d7e3f/index.js"></Script>
               </div>
             </div>
           </div>
@@ -65,20 +48,20 @@ const Footer = () => {
         <div className="container-wide">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              © 2026 WeLoveRave. Todos os direitos reservados.
+              © 2026 TecVibes. Todos os direitos reservados.
             </div>
             <div className="footer-social">
 
-              <a href="https://www.facebook.com/weloverave.club/" target="_blank" className="social-link" aria-label="Facebook">
+              <a href="#" target="_blank" className="social-link" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="https://x.com/WeLoveRaveClub" target="_blank" className="social-link" aria-label="Twitter">
+              <a href="#" target="_blank" className="social-link" aria-label="Twitter">
                 <FaXTwitter />
               </a>
-              <a href="https://www.instagram.com/weloverave.club/" target="_blank" className="social-link" aria-label="Instagram">
+              <a href="#" target="_blank" className="social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="https://www.tiktok.com/@weloverave.club" target="_blank" className="social-link" aria-label="YouTube">
+              <a href="#" target="_blank" className="social-link" aria-label="YouTube">
                 <FaTiktok />
               </a>
             </div>

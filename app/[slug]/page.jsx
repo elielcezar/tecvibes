@@ -9,24 +9,24 @@ import './post.css'
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  
+
   const post = await fetchPostBySlug(slug)
 
   if (!post) {
     return {
-      title: 'Post not found | WeLoveRave'
+      title: 'Post not found | TecVibes'
     }
   }
 
   return {
-    title: `${post.title} | WeLoveRave`,
+    title: `${post.title} | TecVibes`,
     description: post.excerpt,
   }
 }
 
 export default async function PostPage({ params }) {
   const { slug } = await params
-  
+
   const post = await fetchPostBySlug(slug)
 
   if (!post) {
@@ -36,7 +36,7 @@ export default async function PostPage({ params }) {
   const relatedPosts = await fetchRelatedPosts(post.id)
 
   // Build full URL for sharing
-  const baseUrl = 'https://weloverave.club'
+  const baseUrl = 'https://TecVibes.club'
   const postUrl = `${baseUrl}/${slug}`
   const shareTitle = encodeURIComponent(post.title)
   const shareUrl = encodeURIComponent(postUrl)
@@ -50,102 +50,102 @@ export default async function PostPage({ params }) {
   }
 
   return (
-    <main className="single-post">    
-      <div className="container">       
+    <main className="single-post">
+      <div className="container">
 
         <div className="single-post__hero">
-              <Image 
-                src={post.image} 
-                alt={post.title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 200px"
-                priority
-                style={{ objectFit: 'cover' }}
-                className="single-post__image"
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 200px"
+            priority
+            style={{ objectFit: 'cover' }}
+            className="single-post__image"
+          />
+        </div>
+
+        {/* Post Header */}
+        <header className="post-header">
+          <span className={`post-category category-tag--${post.categoryColor}`}>
+            {post.category}
+          </span>
+
+          <h1 className="post-title">{post.title}</h1>
+
+          <div className="post-excerpt">
+            <p className="post-excerpt__text">{post.excerpt}</p>
+          </div>
+
+          <div className="post-meta">
+            <div className="post-author">
+              <Image
+                src="/icon.webp"
+                alt="TecVibes"
+                width={50}
+                height={50}
+                className="post-author__image"
+                style={{ objectFit: 'cover', borderRadius: '50%' }}
               />
+              <div className="post-author__info">
+                <span className="post-author__name">by {post.author}</span>
+                <span className="post-author__date">{post.date}</span>
+              </div>
             </div>
 
-            {/* Post Header */}
-            <header className="post-header">
-              <span className={`post-category category-tag--${post.categoryColor}`}>
-                {post.category}
-              </span>
-
-              <h1 className="post-title">{post.title}</h1>
-
-              <div className="post-excerpt">
-                <p className="post-excerpt__text">{post.excerpt}</p>
+            {/* Social Share */}
+            <div className="post-share">
+              <strong>Share:</strong>
+              <div className="share-buttons">
+                <a
+                  href={shareLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-btn share-btn--facebook"
+                  aria-label="Share on Facebook"
+                >
+                  <FaFacebookF />
+                </a>
+                <a
+                  href={shareLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-btn share-btn--twitter"
+                  aria-label="Share on Twitter"
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href={shareLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-btn share-btn--linkedin"
+                  aria-label="Share on LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href={shareLinks.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-btn share-btn--whatsapp"
+                  aria-label="Share on WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
               </div>
-             
-              <div className="post-meta">
-                <div className="post-author">
-                  <Image
-                    src="/heart.png"
-                    alt="WeLoveRave"
-                    width={50}
-                    height={50}
-                    className="post-author__image"
-                    style={{ objectFit: 'cover', borderRadius: '50%' }}
-                  />
-                  <div className="post-author__info">
-                    <span className="post-author__name">by {post.author}</span>
-                    <span className="post-author__date">{post.date}</span>
-                  </div>
-                </div>
+            </div>
 
-                {/* Social Share */}
-                <div className="post-share">
-                  <strong>Share:</strong>
-                  <div className="share-buttons">
-                    <a 
-                      href={shareLinks.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="share-btn share-btn--facebook"
-                      aria-label="Share on Facebook"
-                    >
-                      <FaFacebookF />
-                    </a>
-                    <a 
-                      href={shareLinks.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="share-btn share-btn--twitter"
-                      aria-label="Share on Twitter"
-                    >
-                      <FaTwitter />
-                    </a>
-                    <a 
-                      href={shareLinks.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="share-btn share-btn--linkedin"
-                      aria-label="Share on LinkedIn"
-                    >
-                      <FaLinkedin />
-                    </a>
-                    <a 
-                      href={shareLinks.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="share-btn share-btn--whatsapp"
-                      aria-label="Share on WhatsApp"
-                    >
-                      <FaWhatsapp />
-                    </a>
-                  </div>
-                </div>
+          </div>
+        </header>
 
-              </div>
-            </header>
 
-                  
-        
+
         <div className="single-post__layout">
-        
-          
+
+
           {/* Main Content */}
-          <article className="single-post__content">            
+          <article className="single-post__content">
             {/* Post Body */}
             <div
               className="post-body"
@@ -160,25 +160,25 @@ export default async function PostPage({ params }) {
                   <span key={index} className="post-tag">{tag}</span>
                 ))}
               </div>
-            )}            
+            )}
 
             {/* Author Bio */}
             <div className="author-bio">
               <Image
-                src="/heart.png"
-                alt="WeLoveRave"
+                src="/icon.webp"
+                alt="TecVibes"
                 width={80}
                 height={80}
                 className="author-bio__image"
                 style={{ objectFit: 'cover', borderRadius: '50%' }}
               />
-              <div className="author-bio__content">                
+              <div className="author-bio__content">
                 <p className="author-bio__description">
-                  Help spread electronic music to the world! WeLoveRave publishes content about the best festivals, releases and news. Send your news suggestion to contact@weloverave.club and see your content read by everyone!
+                  Gosta do nosso conteúdo? Então faça parte da comunidade entrando para o nosso grupo do <strong>Telegram</strong> e receba nossas notícias antes de todo mundo!
                 </p>
               </div>
             </div>
-          
+
           </article>
 
           {/* Sidebar */}
