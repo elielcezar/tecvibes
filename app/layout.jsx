@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
-import TopBar from '@/components/Header/TopBar'
+import TopBar from '@/components/TopBar/TopBar'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import { fetchCategorias } from '@/services/api'
@@ -23,9 +23,9 @@ export default async function RootLayout({ children }) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7864415239368120"
           crossOrigin="anonymous"
-        />        
-      </head>      
-      <body className={inter.className}>      
+        />
+      </head>
+      <body className={inter.className}>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-816RLJY366"
@@ -44,12 +44,12 @@ export default async function RootLayout({ children }) {
           {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"a5add28b156761666fc4a4d68ebe5456"})});`}
         </Script>
         {/* Beehiiv Newsletter */}
-        <Script 
-          src="https://subscribe-forms.beehiiv.com/embed.js" 
+        <Script
+          src="https://subscribe-forms.beehiiv.com/embed.js"
           strategy="afterInteractive"
         />
-       
-        <TopBar />          
+
+        <TopBar />
         <Header categorias={categorias} />
         {children}
         <Footer />

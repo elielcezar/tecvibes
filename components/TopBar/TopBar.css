@@ -1,6 +1,6 @@
 .topbar {
-  background-color: #000000;
-  padding: 15px 0;
+  background-color: var(--primary-color);
+  padding: 25px 0;
   border-bottom: none;
 }
 
@@ -69,8 +69,8 @@
 }
 
 .social-link:hover {
-  color: #ffffff;
-  background-color: #f3004d;
+  color: #ffffff !important;
+  background-color: #0d1056;
 }
 
 .topbar-right {

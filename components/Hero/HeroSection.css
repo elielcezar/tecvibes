@@ -1,12 +1,11 @@
 .hero-section {
   padding: 0;
-  background-color: #111;  
+  background-color: var(--dark-bg);
 }
 
 .hero-category-title {
   padding: 60px 0 50px 0;
-  background: #111 url('/bg-hero.jpg') no-repeat center center;
-  background-size: cover;
+  background-color: var(--dark-bg);
   text-align: center;
   color: white;
 }
@@ -14,7 +13,7 @@
 .hero-category-heading {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--tertiary-color);
   margin: 0 0 10px 0;
   text-transform: uppercase;
 }
@@ -55,14 +54,14 @@
 }
 
 .hero-card__image img,
-.hero-card__image > span {
+.hero-card__image>span {
   width: 100% !important;
   height: 100% !important;
   transition: transform 0.6s ease;
 }
 
 .hero-card:hover .hero-card__image img,
-.hero-card:hover .hero-card__image > span {
+.hero-card:hover .hero-card__image>span {
   transform: scale(1.05);
 }
 
@@ -97,25 +96,10 @@
   color: #ffffff;
 }
 
-.category-tag--purple {
-  background-color: #9c27b0;
-}
-
-.category-tag--pink {
-  background-color: #e91e63;
-}
-
 .category-tag--blue {
-  background-color: #2196f3;
+  background-color: var(--secondary-color);
 }
 
-.category-tag--red {
-  background-color: #f44336;
-}
-
-.category-tag--green {
-  background-color: #00D9A5;
-}
 
 .hero-card__title {
   font-size: 28px;
