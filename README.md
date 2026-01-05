@@ -74,21 +74,6 @@ TecVibes.club/
     └── DEPLOY.md              # Guia de deploy
 ```
 
-## 🌍 Estrutura de URLs
-
-| Tipo | Português | English | Español |
-|------|-----------|---------|---------|
-| Home | `/pt` | `/en` ou `/` | `/es` |
-| Categoria | `/pt/category/eventos` | `/en/category/events` | `/es/category/eventos` |
-| Post | `/pt/titulo-do-post` | `/en/post-title` | `/es/titulo-del-post` |
-
-### Tradução Automática de URLs
-
-Ao trocar de idioma:
-- URLs de categorias são traduzidas automaticamente
-- Slugs de posts são traduzidos para o idioma selecionado
-- A posição de scroll é mantida
-
 ## 🔧 Tecnologias
 
 - **Next.js 15** - Framework React com App Router
@@ -99,18 +84,31 @@ Ao trocar de idioma:
 ## 🌐 Integração com CMS
 
 O site consome APIs externas do CMS:
-- `https://cms.ecwd.cloud/api/posts` - Posts
-- `https://cms.ecwd.cloud/api/categorias` - Categorias
+- `https://scriby.co/api/posts` - Posts
+- `https://scriby.co/api/categorias` - Categorias
 
 ## 📄 Deploy
 
-Consulte o guia completo em [DOCS/DEPLOY.md](./DOCS/DEPLOY.md)
+O deploy para um servidor VPS (com Nginx + PM2) é automatizado.
+
+### 1. Configuração
+
+- **`ecosystem.config.js`**: Este arquivo controla o PM2. Edite-o para definir a porta (`PORT`) e o nome da aplicação (`name`).
+- **`deploy.sh`**: Script que automatiza a atualização, build e reinicialização da aplicação no servidor.
+- **Nginx**: Um arquivo de configuração de exemplo para o Nginx está disponível em `DOCS/nginx-example.conf`. Use-o como base para configurar o proxy reverso para a sua aplicação.
+
+### 2. Processo no Servidor
+
+Após configurar o ambiente no seu servidor (clone do git, instalação do Node.js, PM2 e Nginx):
+
+1.  Acesse o diretório do projeto.
+2.  Execute o script de deploy para publicar as atualizações mais recentes:
 
 ```bash
 # Deploy rápido
-./deploy.sh
+bash deploy.sh
 ```
+O script irá automaticamente fazer o `git pull`, instalar dependências, fazer o build do projeto e reiniciar a aplicação com PM2.
 
-## 📄 Licença
+Para um guia mais detalhado sobre o setup inicial, consulte [DOCS/DEPLOY.md](./DOCS/DEPLOY.md).
 
-Este projeto é um template educacional.

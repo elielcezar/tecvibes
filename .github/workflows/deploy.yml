@@ -1,0 +1,28 @@
+# Workflow para Deploy Automático no VPS
+
+name: Deploy to VPS
+
+on:
+  # Dispara o workflow em pushes para a branch 'main'
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    # Nome do job
+    name: Deploy
+    # Máquina virtual onde o job vai rodar
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Executando o script de deploy no servidor
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.VPS_SSH_HOST }}
+        username: ${{ secrets.VPS_SSH_USERNAME }}
+        key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+        port: ${{ secrets.VPS_SSH_PORT }}
+        script: |
+          cd ${{ secrets.PROJECT_PATH }}
+          bash deploy.sh
