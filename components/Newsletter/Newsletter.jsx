@@ -12,7 +12,7 @@ export default function Newsletter() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         if (!email) return
 
         setStatus('loading')
@@ -34,7 +34,7 @@ export default function Newsletter() {
             }
 
             setStatus('success')
-            setMessage('Sucesso! Verifique seu email para confirmar.')
+            setMessage('Sucesso! Verifique seu email para confirmar. Se não receber, verifique a caixa de spam.')
             setEmail('')
             setName('')
 
@@ -53,7 +53,7 @@ export default function Newsletter() {
                         <h3>Inscreva-se na nossa Newsletter</h3>
                         <p>Receba as últimas notícias de tecnologia e atualizações exclusivas diretamente na sua caixa de entrada.</p>
                     </div>
-                    
+
                     <div className="newsletter-form-wrapper">
                         {status === 'success' ? (
                             <div className="newsletter-success">
@@ -86,8 +86,8 @@ export default function Newsletter() {
                                         disabled={status === 'loading'}
                                     />
                                 </div>
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     className="newsletter-button"
                                     disabled={status === 'loading'}
                                 >
@@ -101,7 +101,7 @@ export default function Newsletter() {
                                 </button>
                             </form>
                         )}
-                        
+
                         {status === 'error' && (
                             <div className="newsletter-error">
                                 <FaExclamationCircle /> {message}
