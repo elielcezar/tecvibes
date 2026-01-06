@@ -1,7 +1,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaFacebookF, FaXTwitter, FaInstagram, FaTiktok } from 'react-icons/fa6'
+import { FaFacebookF, FaXTwitter, FaInstagram, FaEmail } from 'react-icons/fa6'
+import { MdEmail } from "react-icons/md";
 import './Footer.css'
 
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
                   Sua fonte diária de notícias sobre internet, tecnologia. Tudo sobre celulares, computadores e inteligência artificial.
                 </p>
                 <p className="footer-text">
-                  <strong>Email:</strong> contato@tecvibes.com.br
+                  <MdEmail size={20} /> contato@tecvibes.com.br
                 </p>
               </div>
 

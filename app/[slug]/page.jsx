@@ -9,6 +9,7 @@ import './post.css'
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
+  const baseUrl = 'https://tecvibes.com.br' // Define baseUrl here
 
   const post = await fetchPostBySlug(slug)
 
@@ -18,31 +19,34 @@ export async function generateMetadata({ params }) {
     }
   }
 
+  const absolutePostUrl = `${baseUrl}/${post.slug}`
+  const absoluteImageUrl = new URL(post.image, baseUrl).toString() // Ensure image is absolute
+
   return {
     title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `/${post.slug}`,
+      url: absolutePostUrl, // Changed to absolute URL
       siteName: 'TecVibes',
       images: [
         {
-          url: post.image,
+          url: absoluteImageUrl, // Changed to absolute URL
           width: 1200,
           height: 630,
         },
       ],
       locale: 'pt_BR',
       type: 'article',
-      publishedTime: post.date, // Supondo que a API retorna uma data ISO 8601
+      publishedTime: post.date,
       authors: [post.author],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.image],
+      images: [absoluteImageUrl], // Changed to absolute URL
     },
   }
 }

@@ -186,6 +186,15 @@
   color: var(--primary-color);
 }
 
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  font-size: .9rem;
+}
+
 
 /* Responsive */
 @media (max-width: 1024px) {

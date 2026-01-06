@@ -50,8 +50,8 @@ export default function Newsletter() {
             <div className="container">
                 <div className="newsletter-content">
                     <div className="newsletter-text">
-                        <h3>Inscreva-se na nossa Newsletter</h3>
-                        <p>Receba as últimas notícias de tecnologia e atualizações exclusivas diretamente na sua caixa de entrada.</p>
+                        <h3>Gostou do nosso conteúdo?</h3>
+                        <p>Então cadastre-se em nossa newsletter e receba o melhor do TecVibes toda semana no seu email!</p>
                     </div>
 
                     <div className="newsletter-form-wrapper">
