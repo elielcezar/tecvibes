@@ -5,7 +5,6 @@ Um site moderno e responsivo sobre Tecnologia, construído com **Next.js 15**.
 ## 🎵 Características
 
 - ✨ Design moderno inspirado no SmartMag GoodNews
-- 🌍 **Multilíngue** (Português, English, Español) com tradução completa de URLs
 - 📱 Totalmente responsivo para todos os dispositivos
 - 🎯 Hero section com grid de posts destacados
 - 📰 Cards de posts com imagens, categorias e metadados
@@ -35,44 +34,6 @@ Abra o navegador em `http://localhost:3000`
 - `npm run build` - Build de produção
 - `npm start` - Servidor de produção
 - `npm run lint` - Verificação de linting
-
-## 🏗️ Estrutura do Projeto
-
-```
-TecVibes.club/
-├── app/
-│   ├── [lang]/                 # Rotas internacionalizadas
-│   │   ├── [slug]/            # Páginas de posts
-│   │   ├── category/[slug]/   # Páginas de categorias
-│   │   └── page.jsx           # Home por idioma
-│   ├── api/
-│   │   ├── categorias/        # API de categorias
-│   │   └── translate-slug/    # API de tradução de slugs
-│   ├── posts/                 # Posts (legacy)
-│   ├── globals.css
-│   ├── layout.jsx
-│   └── page.jsx               # Home (EN)
-├── components/
-│   ├── Header/                # Header com menu dinâmico
-│   ├── Footer/
-│   ├── Hero/
-│   ├── LanguageSelector/      # Seletor de idiomas
-│   ├── MainContent/
-│   ├── Sidebar/
-│   └── ...
-├── contexts/
-│   └── LanguageContext.jsx    # Contexto de idiomas
-├── locales/                   # Arquivos de tradução
-│   ├── en.json
-│   ├── pt.json
-│   └── es.json
-├── services/
-│   └── api.js                 # Integração com CMS
-├── utils/
-│   └── translations.js        # Utilitários de tradução
-└── DOCS/
-    └── DEPLOY.md              # Guia de deploy
-```
 
 ## 🔧 Tecnologias
 

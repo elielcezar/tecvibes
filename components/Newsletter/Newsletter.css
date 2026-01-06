@@ -1,73 +1,173 @@
-.footer-middle {
+.newsletter-section {
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.newsletter-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 3rem 0;
+    justify-content: space-between;
+    gap: 3rem;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.footer-widget {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-widget #newsletter-container {
-    width: 100%;
-}
-
-
-.widget-newsletter form {
-    max-width: 100% !important;
-    width: 100% !important;
-}
-
-.widget-newsletter form div[data-style="full"] {
-    display: flex;
-}
-
-.widget-newsletter .formkit-column {
+.newsletter-text {
     flex: 1;
 }
 
-.widget-newsletter .formkit-column:nth-child(1) {
-    padding: 0 2rem 1rem 2rem;
+.newsletter-text h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.widget-newsletter .formkit-column:nth-child(1) .formkit-header {
+.newsletter-text h3::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent url('/icon.webp') center no-repeat;
+    background-size: contain;
+}
+
+.newsletter-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin: 0;
 }
 
-.widget-newsletter .formkit-column:nth-child(1) h2 {
-    margin: 0 0 10px 0;
-    line-height: 36px;
+.newsletter-form-wrapper {
+    flex: 1;
+    max-width: 450px;
 }
 
-.widget-newsletter .formkit-column:nth-child(1) .formkit-subheader {
-    margin-top: 0;
-}
-
-.widget-newsletter .formkit-column:nth-child(1) h2::before {
-    content: "";
-    display: block;
-    width: 75px;
-    height: 75px;
-    background: transparent url('/icon.webp') center no-repeat;
-    background-size: 100%;
-    margin-bottom: 10px;
-}
-
-.widget-newsletter form .formkit-column:nth-child(2) {
+.newsletter-form {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.newsletter-input:focus {
+    border-color: #0070f3;
+    box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+}
+
+.newsletter-button {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 }
 
-.widget-newsletter form .formkit-column:nth-child(2) .formkit-guarantee {
-    margin-bottom: 0;
+.newsletter-button:hover:not(:disabled) {
+    background-color: #0060df;
 }
 
-.widget-newsletter .formkit-column .formkit-powered-by-convertkit-container {
-    display: none !important;
+.newsletter-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.newsletter-success {
+    text-align: center;
+    padding: 2rem;
+    background: #e6fffa;
+    border-radius: 8px;
+    border: 1px solid #b2f5ea;
+}
+
+.success-icon {
+    color: #38a169;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-success p {
+    color: #2c7a7b;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.btn-reset {
+    background: none;
+    border: none;
+    color: #3182ce;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.newsletter-error {
+    margin-top: 1rem;
+    color: #e53e3e;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .newsletter-content {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .newsletter-text h3 {
+        justify-content: center;
+    }
+    
+    .newsletter-text h3::before {
+        display: none; /* Simplifica no mobile ou ajusta posição */
+    }
+
+    .newsletter-form-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
 }
