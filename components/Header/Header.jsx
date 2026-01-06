@@ -64,17 +64,14 @@ const Header = ({ categorias = [] }) => {
             </ul>
 
             <div className="social-icons social-icons--mobile">
-              <a href="#" target="_blank" className="social-link" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/TecVibes/61585951238952/" target="_blank" className="social-link" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="#" target="_blank" className="social-link" aria-label="Twitter">
+              <a href="https://x.com/tecvibesbr" target="_blank" className="social-link" aria-label="Twitter">
                 <FaXTwitter />
               </a>
-              <a href="#" target="_blank" className="social-link" aria-label="Instagram">
+              <a href="https://www.instagram.com/tecvibesbr/" target="_blank" className="social-link" aria-label="Instagram">
                 <FaInstagram />
-              </a>
-              <a href="#" target="_blank" className="social-link" aria-label="YouTube">
-                <FaTiktok />
               </a>
             </div>
           </nav>

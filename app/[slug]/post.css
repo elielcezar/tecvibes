@@ -75,7 +75,6 @@
   display: grid;
   grid-template-columns: 1fr 350px;
   gap: 40px;
-  padding-bottom: 60px;
 }
 
 .single-post__content {

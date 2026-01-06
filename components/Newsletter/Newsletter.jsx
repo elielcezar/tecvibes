@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import './Newsletter.css'
 
 export default function Newsletter() {
 
